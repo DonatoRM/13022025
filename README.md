@@ -14,7 +14,7 @@ Necesitamos que se útil para todas estas personas y que siga la normativa.
 3. Lupa: Windows + '+' o Windows +'-'. Se puede hasta hacer po lente.
 4. Filtros de color: Se utilizan para los personas con los diferentes tipos de daltonismo y enfermedades visuales.ç
 5. Audio: Se pueden colocar subtítulos y subir el volumen del pc.
-6. Disctar texto y controlar el dispositivo mediante la voz.
+6. Dictar texto y controlar el dispositivo mediante la voz.
 7. Control ocular: Mediante un dispositivo controla el pc con la vista.
 8. NVDA: Es un programa que lee las pantallas. Se conecta a redes sociales, los elementos de internet, de ofimática, tec. y se puede descargar. Tiene sintetizador de voz. Tiene versión de desarrollo.
 
