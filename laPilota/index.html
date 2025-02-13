@@ -1,468 +1,502 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vuela al siguiente nivel y descubre un mundo de posibilidades.</title>
-    <meta name="author" content="Donato Ramos Martínez">
-    <meta name="description" content="Examen de tema 1">
-    <meta name="keywords" content="html,css,accesibilidad">
+    <meta name="author" content="Donato Ramos Martínez" />
+    <meta name="description" content="Examen de tema 1" />
+    <meta name="keywords" content="html,css,accesibilidad" />
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        :root {
-            --color-enfasis: #042c3c;
-            --color-fondo: #d7dfe2;
-            --color-cielo: #048bba;
-            --color-pista-oscura: #5f7b85;
-            --color-profundo: #046d91;
-            --color-pista-clara: #7c9ca4;
-            --color-textos: #101010;
-        }
-        html {
-            background-color: var(--color-fondo);
-        }
-        body {
-            width: 80%;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .header {
-            background-color: var(--color-enfasis);
-            display: grid;
-            grid-template-columns: 250px auto;
-            grid-template-rows: 5rem;
-        }
-        .logo {
-            grid-row: 1;
-            grid-column: 1;
-            width: 100%;
-            overflow: hidden;
-
-        }
-        .logo a {
-            display: block;
-        }
-        .logo img {
-            object-fit: cover;
-            object-position: -125px -55px;
-        }
-        .texts {
-            grid-row: 1;
-            grid-column: 2;
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(to left, #00293b 0%,var(--color-enfasis) 10%,var(--color-enfasis) 90%,#00293b 100%);
-        }
-        .empresa {
-            display: block;
-            font: bold 2rem Arial, sans-serif;
-            color: var(--color-fondo);
-            padding-right: 2rem;
-        }
-        .eslogan {
-            display: block;
-            font: italic 1rem Arial, sans-serif;
-            color: var(--color-cielo);
-        }
-        .nav {
-            background-color: var(--color-enfasis);
-        }
-        .main {
-            background-color: var(--color-pista-clara);
-            margin-top: 1rem;
-        }
-        .aside {
-            background-color: var(--color-pista-oscura);
-        }
-        .footer {
-            background-color: var(--color-enfasis);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 1rem 3rem;
-            font: normal 1rem Arial, sans-serif;
-        }
-        .navigator {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-        .items {
-            list-style: none;
-        }
-        .links {
-            text-decoration: none;
-            color:var(--color-fondo);
-            font: normal 1.2rem Arial, sans-serif;
-            padding: 0.5rem 2rem;
-        }
-        .links:hover {
-            background-color: var(--color-fondo);
-            color: var(--color-textos);
-        }
-        .grid {
-            display: grid;
-            grid-template-rows: auto;
-            grid-template-columns: 2fr 1fr;
-            gap: 1rem;
-        }
-        main {
-            grid-row: 1;
-            grid-column: 1;
-            font: normal 1rem Arial, sans-serif;
-            background-color: var(--color-enfasis);
-        }
-        .titlePage {
-            grid-row: 1;
-            grid-column: 1 span 2;
-            margin: auto;
-            background: url("./assets/images/elementos-aeropuerto-1200x478.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            overflow: hidden;
-            height: 87vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-        }
-        .titlePage div {
-            padding: 10px;
-            color: white;
-            margin-bottom: 3rem;
-        }
-        .titlePage h1 {
-            font: bold 3rem Arial, sans-serif;
-            color: var(--color-fondo);
-        }
-        .titlePage p {
-            font: italic 1.5rem Arial, sans-serif;
-            color: var(--color-cielo);
-        }
-        .eti {
-            display: block;
-            width: 100%;
-        }
-        .section {
-            grid-row: 2;
-            grid-column: 1;
-        }
-        section article {
-            padding: 0;
-            background-color: var(--color-fondo);
-        }
-        section article h2,.aside article header h2 {
-            border:none;
-            box-shadow: 0 0 0.5rem 5px var(--color-enfasis);
-            background-color: var(--color-enfasis);
-            color: var(--color-fondo);
-            text-align: center;
-        }
-        .aside article header h2 {
-            margin: 1rem 0.25rem;
-        }
-        section article p {
-            color:var(--color-textos);
-            padding: 1.5rem 0.5rem;
-            letter-spacing: 0.10rem;
-        }
-        aside {
-            grid-row: 1;
-            grid-column: 2;
-        }
-        .aside fieldset {
-            border: none;
-            margin: 1rem;
-            box-shadow: 3px 3px 15px var(--color-cielo);
-            background-color: var(--color-cielo);
-            padding: 0.25rem 1rem;
-            font: normal 1rem Arial, sans-serif;
-            color:var(--color-fondo)
-        }
-        .aside legend {
-            position: relative;
-            top: 1rem;
-            padding: 1rem 0;
-            margin: auto;
-            font: bold 1.5rem Arial, sans-serif;
-            color: var(--color-enfasis);
-        }
-        .aside input,.aside select {
-            width: 100%;
-            border: none;
-            padding: 0.25rem 1rem;
-            box-shadow: 0.25rem 0.25rem 0.5rem var(--color-enfasis);
-        }
-        .end {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 1rem;
-        }
-        .end button {
-            font-size: 1.2rem;
-            padding: 0.25rem 3rem;
-            border-radius: 0.25rem;
-            color:var(--color-fondo);
-            background-color: var(--color-enfasis);
-        }
-        .end button:hover {
-            color:var(--color-enfasis);
-            background-color: var(--color-fondo);
-            transition: background-color 0.5s ease,color 0.5s ease;
-        }
-        .capitan {
-            display: grid;
-            grid-template-rows: auto auto;
-            grid-template-columns: auto;
-        }
-        .capitan img {
-            grid-row: 1;
-            grid-column: 1;
-            width: 100%;
-            margin-bottom: 1rem;
-        }
-        .capitan p {
-            grid-row: 2;
-            grid-column: 1;
-        }
-        .section3 {
-            padding: 1rem 0;
-        }
-        .section3 li {
-            margin: 0.5rem 2rem;
-        }
-        .section6 table {
-            margin: auto;
-            box-shadow: 0.2rem 0.2rem 0.2rem var(--color-enfasis);
-            margin-bottom: 1rem;
-            background-color: var(--color-enfasis);
-            border-collapse: collapse;
-            color:var(--color-fondo);
-        }
-        .section6 tr,.section6 td,.section6 th {
-            border: 1px solid var(--color-fondo);
-            padding: 0.2rem 1rem;
-        }
-        article {
-            padding: 1rem 0;
-        }
-        .section1 img {
-            width: 100%;
-            margin: 1rem 0;
-        }
-        .direction strong {
-            font-size: 1.2rem;
-            color:var(--color-cielo);
-        }
-        .direction p {
-            color:var(--color-fondo);
-        }
-        .contact {
-            color:var(--color-fondo);
-        }
-        .contact a {
-            color:var(--color-cielo);
-        }
-        .redes {
-            padding: 1rem 1rem;
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-        .redes img {
-            width: 32px;
-            height: auto;
-        }
-        .aside article {
-            padding: 0.25rem 1rem;
-            font: normal 1rem Arial, sans-serif;
-        }
-        .aside form div {
-            margin: 0.5rem;
-        }
-        form button {
-            margin-top: 1rem;
-        }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --color-enfasis: #042c3c;
+        --color-fondo: #d7dfe2;
+        --color-cielo: #048bba;
+        --color-pista-oscura: #5f7b85;
+        --color-profundo: #046d91;
+        --color-pista-clara: #7c9ca4;
+        --color-textos: #101010;
+      }
+      html {
+        background-color: var(--color-fondo);
+      }
+      body {
+        width: 80%;
+        max-width: 1200px;
+        margin: auto;
+      }
+      .header {
+        background-color: var(--color-enfasis);
+        display: grid;
+        grid-template-columns: 250px auto;
+        grid-template-rows: 5rem;
+      }
+      .logo {
+        grid-row: 1;
+        grid-column: 1;
+        width: 100%;
+        overflow: hidden;
+      }
+      .logo a {
+        display: block;
+      }
+      .logo img {
+        object-fit: cover;
+        object-position: -125px -55px;
+      }
+      .texts {
+        grid-row: 1;
+        grid-column: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(
+          to left,
+          #00293b 0%,
+          var(--color-enfasis) 10%,
+          var(--color-enfasis) 90%,
+          #00293b 100%
+        );
+      }
+      .empresa {
+        display: block;
+        font: bold 2rem Arial, sans-serif;
+        color: var(--color-fondo);
+        padding-right: 2rem;
+      }
+      .eslogan {
+        display: block;
+        font: italic 1rem Arial, sans-serif;
+        color: var(--color-cielo);
+      }
+      .nav {
+        background-color: var(--color-enfasis);
+      }
+      .main {
+        background-color: var(--color-pista-clara);
+        margin-top: 1rem;
+      }
+      .aside {
+        background-color: var(--color-pista-oscura);
+      }
+      .footer {
+        background-color: var(--color-enfasis);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 1rem 3rem;
+        font: normal 1rem Arial, sans-serif;
+      }
+      .navigator {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .items {
+        list-style: none;
+      }
+      .links {
+        text-decoration: none;
+        color: var(--color-fondo);
+        font: normal 1.2rem Arial, sans-serif;
+        padding: 0.5rem 2rem;
+      }
+      .links:hover {
+        background-color: var(--color-fondo);
+        color: var(--color-textos);
+      }
+      .grid {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+      }
+      main {
+        grid-row: 1;
+        grid-column: 1;
+        font: normal 1rem Arial, sans-serif;
+        background-color: var(--color-enfasis);
+      }
+      .titlePage {
+        grid-row: 1;
+        grid-column: 1 span 2;
+        margin: auto;
+        background: url("./assets/images/elementos-aeropuerto-1200x478.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        overflow: hidden;
+        height: 87vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      .titlePage div {
+        padding: 10px;
+        color: white;
+        margin-bottom: 3rem;
+      }
+      .titlePage h1 {
+        font: bold 3rem Arial, sans-serif;
+        color: var(--color-fondo);
+      }
+      .titlePage p {
+        font: italic 1.5rem Arial, sans-serif;
+        color: var(--color-cielo);
+      }
+      .eti {
+        display: block;
+        width: 100%;
+      }
+      .section {
+        grid-row: 2;
+        grid-column: 1;
+      }
+      section article {
+        padding: 0;
+        background-color: var(--color-fondo);
+      }
+      section article h2,
+      .aside article header h2 {
+        border: none;
+        box-shadow: 0 0 0.5rem 5px var(--color-enfasis);
+        background-color: var(--color-enfasis);
+        color: var(--color-fondo);
+        text-align: center;
+      }
+      .aside article header h2 {
+        margin: 1rem 0.25rem;
+      }
+      section article p {
+        color: var(--color-textos);
+        padding: 1.5rem 0.5rem;
+        letter-spacing: 0.1rem;
+      }
+      aside {
+        grid-row: 1;
+        grid-column: 2;
+      }
+      .aside fieldset {
+        border: none;
+        margin: 1rem;
+        box-shadow: 3px 3px 15px var(--color-cielo);
+        background-color: var(--color-cielo);
+        padding: 0.25rem 1rem;
+        font: normal 1rem Arial, sans-serif;
+        color: var(--color-fondo);
+      }
+      .aside legend {
+        position: relative;
+        top: 1rem;
+        padding: 1rem 0;
+        margin: auto;
+        font: bold 1.5rem Arial, sans-serif;
+        color: var(--color-enfasis);
+      }
+      .aside input,
+      .aside select {
+        width: 100%;
+        border: none;
+        padding: 0.25rem 1rem;
+        box-shadow: 0.25rem 0.25rem 0.5rem var(--color-enfasis);
+      }
+      .end {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+      }
+      .end button {
+        font-size: 1.2rem;
+        padding: 0.25rem 3rem;
+        border-radius: 0.25rem;
+        color: var(--color-fondo);
+        background-color: var(--color-enfasis);
+      }
+      .end button:hover {
+        color: var(--color-enfasis);
+        background-color: var(--color-fondo);
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+      .capitan {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto;
+      }
+      .capitan img {
+        grid-row: 1;
+        grid-column: 1;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      .capitan p {
+        grid-row: 2;
+        grid-column: 1;
+      }
+      .section3 {
+        padding: 1rem 0;
+      }
+      .section3 li {
+        margin: 0.5rem 2rem;
+      }
+      .section6 table {
+        margin: auto;
+        box-shadow: 0.2rem 0.2rem 0.2rem var(--color-enfasis);
+        margin-bottom: 1rem;
+        background-color: var(--color-enfasis);
+        border-collapse: collapse;
+        color: var(--color-fondo);
+      }
+      .section6 tr,
+      .section6 td,
+      .section6 th {
+        border: 1px solid var(--color-fondo);
+        padding: 0.2rem 1rem;
+      }
+      article {
+        padding: 1rem 0;
+      }
+      .section1 img {
+        width: 100%;
+        margin: 1rem 0;
+      }
+      .direction strong {
+        font-size: 1.2rem;
+        color: var(--color-cielo);
+      }
+      .direction p {
+        color: var(--color-fondo);
+      }
+      .contact {
+        color: var(--color-fondo);
+      }
+      .contact a {
+        color: var(--color-cielo);
+      }
+      .redes {
+        padding: 1rem 1rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .redes img {
+        width: 32px;
+        height: auto;
+      }
+      .aside article {
+        padding: 0.25rem 1rem;
+        font: normal 1rem Arial, sans-serif;
+      }
+      .aside form div {
+        margin: 0.5rem;
+      }
+      form button {
+        margin-top: 1rem;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="super">
-        <header class="header">
-            <div class="logo">
-                <a href="./index.html" title="Volver a la página principal">
-                    <img src="./assets/images/logo_business_airlines.jpg" alt="logotipo">
-                </a>
-            </div>
-            <div class="texts">
-                    <span class="empresa"><strong>Business Airlines</strong></span>
-                    <span class="eslogan"><em>Vuela al siguiente nivel y descubre un mundo de posibilidades.</em></span>
-            </div>
-        </header>
-        <nav class="nav">
-            <ul class="navigator">
-                <li class="items"><a href="#" class="links">Inicio</a></li>
-                <li class="items"><a href="#" class="links">Destino</a></li>
-                <li class="items"><a href="#" class="links">Reservas</a></li>
-                <li class="items"><a href="#" class="links">Contacto</a></li>
-            </ul>
-        </nav>
+      <header class="header">
+        <div class="logo">
+          <a href="./index.html" title="Volver a la página principal" tabindex="1">
+            <img src="./assets/images/logo_business_airlines.jpg" alt="logotipo de la compañía" />
+          </a>
+        </div>
+        <div class="texts">
+          <span class="empresa"><strong>Business Airlines</strong></span>
+          <span class="eslogan"><em>Vuela al siguiente nivel y descubre un mundo de posibilidades.</em></span>
+        </div>
+      </header>
+      <nav class="nav">
+        <ul class="navigator">
+          <li class="items"><a href="#" class="links" title="Inicio" tabindex="2">Inicio</a></li>
+          <li class="items"><a href="#" class="links" title="Destino" tabindex="3">Destino</a></li>
+          <li class="items"><a href="#" class="links" title="Reservas" tabindex="4">Reservas</a></li>
+          <li class="items"><a href="#" class="links" title="Contacto" tabindex="5">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
     <div class="titlePage">
-        <div>
-            <h1>Bienvenidos a Business Airlines</h1>
-            <p>Vuela al siguiente nivel y descubre un mundo de posibilidades.</p>
-        </div>
+      <div>
+        <h1>
+          Bienvenidos a Business Airlines
+          <p>Vuela al siguiente nivel y descubre un mundo de posibilidades.</p>
+        </h1>
+      </div>
     </div>
     <div class="grid">
-    <main class="main">
+      <main class="main">
         <section class="section">
-            <article class="section1">
-                <header>
-                    <h2>Conectamos el mundo con elegancia y eficiencia.</h2>
-                </header>
-                <p>En Business Airlines, nos especializamos en ofrecer experiencias de vuelo incomparables para viajeros de negocios y clientes exigentes. Nuestra misión es proporcionar un servicio de primera clase que combine lujo, comodidad y puntualidad en cada trayecto.</p>
-                <img src="./assets/images/piloto_001.jpg" alt="foto del piloto">
-            </article>
-            <article class="section2">
-                <header>
-                    <h2>Vuelos Ejecutivos</h2>
-                </header>
-                <p>Disfruta de viajes exclusivos diseñados para maximizar tu tiempo y comodidad. Nuestros vuelos ejecutivos ofrecen espacios amplios, asientos reclinables, opciones gastronómicas gourmet y entretenimiento a bordo de alta calidad. Cada detalle está pensado para garantizar una experiencia excepcional desde el despegue hasta el aterrizaje.
-                </p>
-            </article>
-            <article class="section3">
-                <header>
-                    <h2>Servicios incluidos en nuestros vuelos:</h2>
-                </header>
-                <ol>
-                    <li>Asientos ergonómicos totalmente reclinables.</li>
-                    <li>Conectividad Wi-Fi de alta velocidad durante todo el vuelo.</li>
-                    <li>Menú gourmet con opciones personalizadas.</li>
-                    <li>Sistema de entretenimiento con pantalla individual.</li>
-                    <li>Servicio de atención personalizada a bordo.</li>
-                    <li>Kit de confort premium para viajes largos.</li>
-                </ol>
-            </article>
-            <article class="section4">
-                <header>
-                    <h2>Servicios Premium</h2>
-                </header>
-                <p>Accede a una amplia gama de servicios premium que hacen de tu viaje una experiencia placentera y sin estrés. Disfruta de salas VIP exclusivas, check-in prioritario, embarque preferencial y atención personalizada durante todo el viaje. Nuestro equipo está comprometido a satisfacer cada una de tus necesidades.
-                </p>
-            </article>
-            <article class="section5">
-                <header>
-                    <h2>Flota Moderna</h2>
-                </header>
-                <p>Contamos con una flota de aviones de última generación equipados con la más avanzada tecnología en seguridad y confort. Cada aeronave está diseñada para ofrecer un vuelo silencioso, eficiente y seguro, asegurando un viaje placentero en todo momento.
-                </p>
-            </article>
-            <article class="section6">
-                <header>
-                    <h2>Reserva Fácil</h2>
-                </header>
-                <p>Planificar tu próximo viaje nunca fue tan sencillo. Nuestro sitio web intuitivo permite comprar boletos de forma rápida, segura y personalizada. Además, ofrecemos asistencia en línea para ayudarte en cada paso del proceso de reserva.
-                </p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Ciudad</th>
-                            <th>Precio</th>
-                            <th>Duración</th>
-                            <th>Vuelo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Madrid</td>
-                            <td>112€</td>
-                            <td>1hora</td>
-                            <td>AX1123</td>
-                        </tr>
-                        <tr>
-                            <td>Barcelona</td>
-                            <td>160€</td>
-                            <td>1h y media</td>
-                            <td>BX2222</td>
-                        </tr>
-                        <tr>
-                            <td>Bilbao</td>
-                            <td>100€</td>
-                            <td>20min</td>
-                            <td>CX3333</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </article>
-        </section>
-    </main>
-    <aside class="aside">
-        <article>
+          <article class="section1">
             <header>
-                <h2>Biografía del Capitán Juan González</h2>
+              <h2 tabindex="6">Conectamos el mundo con elegancia y eficiencia.</h2>
             </header>
-            <div class="capitan">
-                <img src="./assets/images/piloto_002.jpg" alt="foto capitan">
-                <p>El Capitán Juan González cuenta con más de 25 años de experiencia en la aviación comercial. Inició su carrera como piloto privado y, gracias a su dedicación y pasión por los cielos, ascendió rápidamente a piloto comercial. Se ha especializado en vuelos ejecutivos de largo alcance y ha acumulado más de 15,000 horas de vuelo. Juan es reconocido por su liderazgo, compromiso con la seguridad y atención al detalle, cualidades que lo convierten en un pilar fundamental de la excelencia en Business Airlines.</p>
-            </div>
+            <p tabindex="7">
+              En Business Airlines, nos especializamos en ofrecer experiencias de vuelo incomparables para viajeros de
+              negocios y clientes exigentes. Nuestra misión es proporcionar un servicio de primera clase que combine
+              lujo, comodidad y puntualidad en cada trayecto.
+            </p>
+            <img src="./assets/images/piloto_001.jpg" alt="foto del piloto" />
+          </article>
+          <article class="section2">
+            <header>
+              <h2 tabindex="8">Vuelos Ejecutivos</h2>
+            </header>
+            <p tabindex="9">
+              Disfruta de viajes exclusivos diseñados para maximizar tu tiempo y comodidad. Nuestros vuelos ejecutivos
+              ofrecen espacios amplios, asientos reclinables, opciones gastronómicas gourmet y entretenimiento a bordo
+              de alta calidad. Cada detalle está pensado para garantizar una experiencia excepcional desde el despegue
+              hasta el aterrizaje.
+            </p>
+          </article>
+          <article class="section3">
+            <header>
+              <h2 tabindex="10">Servicios incluidos en nuestros vuelos:</h2>
+            </header>
+            <ol>
+              <li tabindex="10">Asientos ergonómicos totalmente reclinables.</li>
+              <li tabindex="11">Conectividad Wi-Fi de alta velocidad durante todo el vuelo.</li>
+              <li tabindex="12">Menú gourmet con opciones personalizadas.</li>
+              <li tabindex="13">Sistema de entretenimiento con pantalla individual.</li>
+              <li tabindex="14">Servicio de atención personalizada a bordo.</li>
+              <li tabindex="15">Kit de confort premium para viajes largos.</li>
+            </ol>
+          </article>
+          <article class="section4">
+            <header>
+              <h2 tabindex="16">Servicios Premium</h2>
+            </header>
+            <p tabindex="17">
+              Accede a una amplia gama de servicios premium que hacen de tu viaje una experiencia placentera y sin
+              estrés. Disfruta de salas VIP exclusivas, check-in prioritario, embarque preferencial y atención
+              personalizada durante todo el viaje. Nuestro equipo está comprometido a satisfacer cada una de tus
+              necesidades.
+            </p>
+          </article>
+          <article class="section5">
+            <header>
+              <h2 tabindex="18">Flota Moderna</h2>
+            </header>
+            <p tabindex="19">
+              Contamos con una flota de aviones de última generación equipados con la más avanzada tecnología en
+              seguridad y confort. Cada aeronave está diseñada para ofrecer un vuelo silencioso, eficiente y seguro,
+              asegurando un viaje placentero en todo momento.
+            </p>
+          </article>
+          <article class="section6">
+            <header>
+              <h2 tabindex="20">Reserva Fácil</h2>
+            </header>
+            <p tabindex="21">
+              Planificar tu próximo viaje nunca fue tan sencillo. Nuestro sitio web intuitivo permite comprar boletos de
+              forma rápida, segura y personalizada. Además, ofrecemos asistencia en línea para ayudarte en cada paso del
+              proceso de reserva.
+            </p>
+            <table role="table">
+              <thead role="rowgroup">
+                <tr role="row">
+                  <th role="columnheader">Ciudad</th>
+                  <th role="columnheader">Precio</th>
+                  <th role="columnheader">Duración</th>
+                  <th role="columnheader">Vuelo</th>
+                </tr>
+              </thead>
+              <tbody role="rowgroup">
+                <tr role="row">
+                  <td role="cell">Madrid</td>
+                  <td role="cell">112€</td>
+                  <td role="cell">1hora</td>
+                  <td role="cell">AX1123</td>
+                </tr>
+                <tr>
+                  <td role="cell">Barcelona</td>
+                  <td role="cell">160€</td>
+                  <td role="cell">1h y media</td>
+                  <td role="cell">BX2222</td>
+                </tr>
+                <tr>
+                  <td role="cell">Bilbao</td>
+                  <td role="cell">100€</td>
+                  <td role="cell">20min</td>
+                  <td role="cell">CX3333</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+        </section>
+      </main>
+      <aside class="aside">
+        <article>
+          <header>
+            <h2 tabindex="22">Biografía del Capitán Juan González</h2>
+          </header>
+          <div class="capitan">
+            <img src="./assets/images/piloto_002.jpg" alt="foto capitán" />
+            <p tabindex="23">
+              El Capitán Juan González cuenta con más de 25 años de experiencia en la aviación comercial. Inició su
+              carrera como piloto privado y, gracias a su dedicación y pasión por los cielos, ascendió rápidamente a
+              piloto comercial. Se ha especializado en vuelos ejecutivos de largo alcance y ha acumulado más de 15,000
+              horas de vuelo. Juan es reconocido por su liderazgo, compromiso con la seguridad y atención al detalle,
+              cualidades que lo convierten en un pilar fundamental de la excelencia en Business Airlines.
+            </p>
+          </div>
         </article>
         <form action="#" method="post">
-           <fieldset>
+          <fieldset>
             <legend>Reservas</legend>
             <div>
-                <label for="name" class="eti">Nombre completo</label>
-                <input type="text" name="name" id="name" required>
+              <label for="name" class="eti">Nombre completo</label>
+              <input type="text" name="name" id="name" required />
             </div>
             <div>
-                <label for="email" class="eti">Correo electrónico</label>
-                <input type="email" name="email" id="email" required>
+              <label for="email" class="eti">Correo electrónico</label>
+              <input type="email" name="email" id="email" required />
             </div>
             <div>
-                <label for="selection class="eti">Selección de destino</label>
-                <select name="selection" id="selection">
-                    <option value="vg">Vigo</option>
-                    <option value="md">Madrid</option>
-                    <option value="bc">Barcelona</option>
-                    <option value="va">Valencia</option>
-                    <option value="bi">Bilbao</option>
-                </select>
+              <label for="selection" class="eti">Selección de destino</label>
+              <select name="selection" id="selection">
+                <option value="vg">Vigo</option>
+                <option value="md">Madrid</option>
+                <option value="bc">Barcelona</option>
+                <option value="va">Valencia</option>
+                <option value="bi">Bilbao</option>
+              </select>
             </div>
             <div>
-                <label for="data" class="eti">Fecha de vuelo</label>
-                <input type="date" name="data" id="data">
+              <label for="data" class="eti">Fecha de vuelo</label>
+              <input type="date" name="data" id="data" />
             </div>
             <div class="end">
-                <button type="submit">Enviar</button>
+              <button aria-label="Enviar" type="submit">Enviar</button>
             </div>
-           </fieldset> 
+          </fieldset>
         </form>
-    </aside>
+      </aside>
     </div>
     <footer class="footer">
-        <div class="direction">
-            <p><strong>Business Airlines S.A.</strong></p>
-            <p>Avenida de la Aviación 1234, Piso 10</p>
-            <p>Ciudad Global</p> 
-            <p>País Internacional</p>
+      <div class="direction">
+        <p><strong tabindex="24">Business Airlines S.A.</strong></p>
+        <p tabindex="25">Avenida de la Aviación 1234, Piso 10</p>
+        <p tabindex="26">Ciudad Global</p>
+        <p tabindex="27">País Internacional</p>
+      </div>
+      <div class="contact">
+        <p tabindex="28">Teléfono: +123 456 7890</p>
+        <p tabindex="29">Correo: <a href="mailto:contacto@businessairlines.com">contacto@businessairlines.com</a></p>
+        <div class="redes">
+          <a href="#" tabindex="30"><img src="./assets/images/redes/facebook.png" alt="facebook" /></a>
+          <a href="#" tabindex="31"><img src="./assets/images/redes/twitter.png" alt="X" /></a>
+          <a href="#" tabindex="32"><img src="./assets/images/redes/instagram.png" alt="Instagram" /></a>
         </div>
-        <div class="contact">
-            <p>Teléfono: +123 456 7890</p>
-            <p>Correo: <a href="mailto:contacto@businessairlines.com">contacto@businessairlines.com</a></p>
-            <div class="redes">
-                <a href="#"><img src="./assets/images/redes/facebook.png" alt="facebook"></a>
-                <a href="#"><img src="./assets/images/redes/twitter.png" alt="X"></a>
-                <a href="#"><img src="./assets/images/redes/instagram.png" alt="Instagram"></a>
-
-            </div>
-        </div>   
+      </div>
     </footer>
-</body>
+  </body>
 </html>
